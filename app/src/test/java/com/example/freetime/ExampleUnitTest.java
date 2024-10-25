@@ -1,4 +1,4 @@
-package com.example.proyectofinallucasezequielivanyleo;
+package com.example.freetime;
 
 import org.junit.Test;
 

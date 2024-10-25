@@ -1,3 +1,32 @@
 <resources>
-    <string name="app_name">Proyecto Final Lucas, Ezequiel, Ivan y Leo</string>
+    <string name="app_name">FreeTime</string>
+
+    <!-- Strings para RestQuestion -->
+    <string name="shutdown_title">¿Cual es tu horario de descanso?</string>
+    <string name="shutdown_subtitle">Selecciona las horas entre las cuales prefieres no hacer nada, como prepararte para dormir:</string>
+    <string name="confirm_button">Confirmar</string>
+
+    <!-- Strings para ActivityQuestion -->
+    <string name="activity_register_title">Registrar actividad</string>
+    <string name="activity_register_description">Ingresa los detalles de la actividad, selecciona los días y horarios:</string>
+    <string name="hint_activity_name">Nombre de la actividad</string>
+    <string name="start_time_label">Hora de inicio</string>
+    <string name="end_time_label">Hora de fin</string>
+    <string name="select_days_label">Selecciona los días:</string>
+    <string name="is_fixed_label">Es una actividad inamovible</string>
+    <string name="save_activity">Guardar</string>
+    <string name="title">¿Qué actividades tienes en tu día a día?</string>
+    <string name="description">Estas actividades son parte de tu vida cotidianas</string>
+    <string name="days_title">¿Qué días tienes esta actividad?</string>
+    <string name="time_title">¿En qué horario?</string>
+    <string name="lunes">L</string>
+    <string name="martes">M</string>
+    <string name="miercoles">X</string>
+    <string name="jueves">J</string>
+    <string name="viernes">V</string>
+    <string name="sabado">S</string>
+    <string name="domingo">D</string>
+    <string name="A">A</string>
+    <string name="explanation_fixed">Una actividad inamovible es aquella actividad que DEBES realizar en tu rutina</string>
+
 </resources>

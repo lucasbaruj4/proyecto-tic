@@ -12,15 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinalLucasEzequielIvanYLeo"
         tools:targetApi="31">
+
+        <!-- Declaración de la actividad ActivityQuestion -->
         <activity
-            android:name=".MainActivity"
+            android:name=".ActivityQuestion"
+            android:exported="true">
+        </activity>
+
+        <!-- Declaración de la actividad RestQuestion como actividad principal -->
+        <activity
+            android:name=".RestQuestion"
             android:exported="true">
             <intent-filter>
+                <!-- Definir como la actividad principal que se lanza al abrir la aplicación -->
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+    </application>
 </manifest>

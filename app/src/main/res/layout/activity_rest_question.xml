@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    *
+    * Project: FreeTime
+    * Author: Lucas Baruja
+    * Date: 10/23/2024
+    * Description: Este XML contiene el layout para la actividad de RestQuestion
+    -->
+<!-- Layout principal para la pregunta del sueño -->
+<!-- activity_shutdown.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!-- Título para el periodo de "apagarse" -->
+    <TextView
+        android:id="@+id/tv_shutdown_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shutdown_title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:fontFamily="@font/poppins"
+        android:textAppearance="@font/poppins_bold"/>
+
+    <!-- Texto aclaratorio sobre el periodo de apagarse -->
+    <TextView
+        android:id="@+id/tv_shutdown_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shutdown_subtitle"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
+        android:textStyle="normal"/>
+
+    <!-- TimePicker para la hora de inicio del periodo de apagarse -->
+    <TimePicker
+        android:id="@+id/timePicker_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:layout_marginTop="16dp"/>
+
+    <!-- TimePicker para la hora de fin del periodo de apagarse -->
+    <TimePicker
+        android:id="@+id/timePicker_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Botón para confirmar las horas seleccionadas -->
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm_button"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"/>
+</LinearLayout>
+
