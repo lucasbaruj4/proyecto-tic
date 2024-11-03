@@ -1,9 +1,34 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme -->
     <style name="Base.Theme.ProyectoFinalLucasEzequielIvanYLeo" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
+        <!-- Customize your light theme here -->
         <item name="colorPrimary">@color/FreeTimeGreen</item>
+        <item name="android:datePickerStyle">@style/CalendarViewCustomStyle</item>
     </style>
 
+    <!-- Application theme -->
     <style name="Theme.ProyectoFinalLucasEzequielIvanYLeo" parent="Base.Theme.ProyectoFinalLucasEzequielIvanYLeo" />
+
+    <!-- Estilo personalizado para CalendarView -->
+    <style name="CalendarViewCustomStyle" >
+        <item name="android:dateTextAppearance">@style/CalendarDateText</item>
+        <item name="android:weekDayTextAppearance">@style/CalendarWeekText</item>
+        <item name="android:focusedMonthDateColor">@color/colorAccent</item> <!-- Color para el círculo de la fecha seleccionada -->
+        <item name="android:unfocusedMonthDateColor">@color/light_gray</item> <!-- Color para las fechas no seleccionadas -->
+        <item name="android:selectedDateVerticalBar">@color/colorAccent</item>
+    </style>
+
+    <!-- Estilo para las fechas del calendario -->
+    <style name="CalendarDateText" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item> <!-- Tamaño de texto más grande -->
+        <item name="android:fontFamily">@font/poppins_regular</item> <!-- Fuente Poppins -->
+        <item name="android:textColor">@color/black</item> <!-- Color del texto -->
+    </style>
+
+    <!-- Estilo para los días de la semana en el calendario -->
+    <style name="CalendarWeekText" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item> <!-- Tamaño de texto más grande para los días de la semana -->
+        <item name="android:fontFamily">@font/poppins_bold</item> <!-- Fuente Poppins en negrita -->
+        <item name="android:textColor">@color/gray</item> <!-- Color del texto -->
+    </style>
 </resources>

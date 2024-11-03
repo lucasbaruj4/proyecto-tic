@@ -2,22 +2,27 @@ package com.example.freetime;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.example.freetime.dao.ActivityDao;
+import com.example.freetime.entities.Activity;
+import com.example.freetime.AppDatabase;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
@@ -29,19 +34,19 @@ public class ActivityQuestion extends AppCompatActivity {
     private String endTime = "";
     private boolean isFixedActivity;
 
+    private ActivityDao activityDao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_question);
 
-        // Referencias a los componentes
+        activityDao = AppDatabase.getDatabase(this).activityDao();
+
         EditText editTextActivityName = findViewById(R.id.activityNameActivityQuestion);
         CheckBox checkBoxFixed = findViewById(R.id.inamovible_checkbox);
         Button saveButton = findViewById(R.id.save_activity);
 
-
-
-        // Referencias a los botones de días
         Button[] dayButtons = new Button[]{
                 findViewById(R.id.lunesActivityQuestion),
                 findViewById(R.id.martesActivityQuestion),
@@ -52,114 +57,145 @@ public class ActivityQuestion extends AppCompatActivity {
                 findViewById(R.id.domingoActivityQuestion)
         };
 
-        // Manejar selección de días
         handleDaySelection(dayButtons);
-
-        // Manejar selección de horas
         handleTimePickers();
 
-        // Acción del botón guardar
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Guardar nombre de la actividad
-                activityName = editTextActivityName.getText().toString();
-
-                // Guardar si es una actividad inamovible
-                isFixedActivity = checkBoxFixed.isChecked();
-
-                // Mostrar el diálogo de confirmación
-                showSaveDialog();
-            }
+        saveButton.setOnClickListener(view -> {
+            activityName = editTextActivityName.getText().toString();
+            isFixedActivity = checkBoxFixed.isChecked();
+            saveActivityData();
+            showSaveDialog();
         });
     }
 
-    // Función para manejar la selección de días
     private void handleDaySelection(Button[] dayButtons) {
-        String[] dayNames = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
+        String[] dayNames = {
+                getString(R.string.summary_day_lunes),
+                getString(R.string.summary_day_martes),
+                getString(R.string.summary_day_miercoles),
+                getString(R.string.summary_day_jueves),
+                getString(R.string.summary_day_viernes),
+                getString(R.string.summary_day_sabado),
+                getString(R.string.summary_day_domingo)
+        };
 
         for (int i = 0; i < dayButtons.length; i++) {
             final Button dayButton = dayButtons[i];
             final String dayName = dayNames[i];
 
-            // Inicialmente, todos los botones en gris
             dayButton.setBackgroundColor(ContextCompat.getColor(this, R.color.gray));
 
-            dayButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Cambiar el color entre gris y verde al hacer clic
-                    if (selectedDays.contains(dayName)) {
-                        // Si el día ya está seleccionado, quitarlo y cambiar a gris
-                        selectedDays.remove(dayName);
-                        dayButton.setBackgroundColor(ContextCompat.getColor(ActivityQuestion.this, R.color.gray));
-                    } else {
-                        // Si no está seleccionado, agregarlo y cambiar a verde
-                        selectedDays.add(dayName);
-                        dayButton.setBackgroundColor(ContextCompat.getColor(ActivityQuestion.this, R.color.FreeTimeGreen));
-                    }
+            dayButton.setOnClickListener(view -> {
+                if (selectedDays.contains(dayName)) {
+                    selectedDays.remove(dayName);
+                    dayButton.setBackgroundColor(ContextCompat.getColor(ActivityQuestion.this, R.color.gray));
+                } else {
+                    selectedDays.add(dayName);
+                    dayButton.setBackgroundColor(ContextCompat.getColor(ActivityQuestion.this, R.color.FreeTimeGreen));
                 }
             });
         }
     }
 
-    // Función para manejar la selección de horas desde TimePickers
     private void handleTimePickers() {
         TimePicker startTimePicker = findViewById(R.id.start_time_picker);
         TimePicker endTimePicker = findViewById(R.id.end_time_picker);
 
-        // Configurar TimePicker en formato 24 horas
         startTimePicker.setIs24HourView(true);
         endTimePicker.setIs24HourView(true);
 
+        startTimePicker.setOnTimeChangedListener((timePicker, hourOfDay, minute) ->
+                startTime = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute));
 
-        // Listener para obtener la hora de inicio
-        startTimePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-            @Override
-            public void onTimeChanged(TimePicker timePicker, int hourOfDay, int minute) {
-                startTime = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute);
-            }
-        });
-
-        // Listener para obtener la hora de fin
-        endTimePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-            @Override
-            public void onTimeChanged(TimePicker timePicker, int hourOfDay, int minute) {
-                endTime = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute);
-            }
-        });
+        endTimePicker.setOnTimeChangedListener((timePicker, hourOfDay, minute) ->
+                endTime = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute));
     }
 
-    // Función para mostrar el diálogo al guardar
+    private void saveActivityData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("user_id", -1);
+
+        if (userId == -1) {
+            Toast.makeText(this, getString(R.string.error_user_not_authenticated), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Validar que startTime y endTime tengan valores predeterminados (la hora actual)
+        if (startTime == null || startTime.isEmpty()) {
+            Calendar calendar = Calendar.getInstance();
+            startTime = String.format(Locale.getDefault(), "%02d:%02d", calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
+        }
+
+        if (endTime == null || endTime.isEmpty()) {
+            Calendar calendar = Calendar.getInstance();
+            endTime = String.format(Locale.getDefault(), "%02d:%02d", calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
+        }
+
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        int weeksToGenerate = 4;
+
+        if (selectedDays.isEmpty()) {
+            Toast.makeText(this, getString(R.string.select_at_least_one_day), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        for (String dayOfWeek : selectedDays) {
+            int dayIndex = getDayOfWeekIndex(dayOfWeek);
+
+            for (int week = 0; week < weeksToGenerate; week++) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(Calendar.DAY_OF_WEEK, dayIndex);
+                calendar.add(Calendar.WEEK_OF_YEAR, week);
+
+                String date = dateFormat.format(calendar.getTime());
+
+                Activity newActivity = new Activity(userId, activityName, selectedDays, startTime, endTime, isFixedActivity, date);
+
+                new Thread(() -> {
+                    activityDao.insertActivity(newActivity);
+                    Log.d("ActivityQuestion", getString(R.string.activity_saved_log, newActivity.name, newActivity.date, selectedDays));
+                }).start();
+            }
+        }
+    }
+
+    private int getDayOfWeekIndex(String dayName) {
+        switch (dayName) {
+            case "Lunes":
+                return Calendar.MONDAY;
+            case "Martes":
+                return Calendar.TUESDAY;
+            case "Miércoles":
+                return Calendar.WEDNESDAY;
+            case "Jueves":
+                return Calendar.THURSDAY;
+            case "Viernes":
+                return Calendar.FRIDAY;
+            case "Sábado":
+                return Calendar.SATURDAY;
+            case "Domingo":
+                return Calendar.SUNDAY;
+            default:
+                return Calendar.MONDAY;
+        }
+    }
+
     private void showSaveDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("¿Quiere guardar otra actividad?")
+        builder.setMessage(getString(R.string.confirmation_text))
                 .setCancelable(false)
-                .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Limpiar el formulario para agregar otra actividad
-                        resetForm();
-                    }
-                })
-                .setNegativeButton("Continuar", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Ir a otra pantalla (todavía no creada)
-                        goToNextScreen();
-                    }
-                });
+                .setPositiveButton(R.string.yes, (dialog, id) -> resetForm())
+                .setNegativeButton(R.string.no, (dialog, id) -> goToNextScreen());
         AlertDialog alert = builder.create();
         alert.show();
     }
 
-    // Función para limpiar el formulario
     private void resetForm() {
         EditText editTextActivityName = findViewById(R.id.activityNameActivityQuestion);
         CheckBox checkBoxFixed = findViewById(R.id.inamovible_checkbox);
 
-        // Limpiar el nombre de la actividad
         editTextActivityName.setText("");
-
-        // Deseleccionar todos los días
         selectedDays.clear();
         Button[] dayButtons = new Button[]{
                 findViewById(R.id.lunesActivityQuestion),
@@ -174,10 +210,7 @@ public class ActivityQuestion extends AppCompatActivity {
             dayButton.setBackgroundColor(ContextCompat.getColor(this, R.color.gray));
         }
 
-        // Deseleccionar el checkbox
         checkBoxFixed.setChecked(false);
-
-        // Reiniciar horas (opcional)
         TimePicker startTimePicker = findViewById(R.id.start_time_picker);
         TimePicker endTimePicker = findViewById(R.id.end_time_picker);
         startTimePicker.setHour(0);
@@ -185,16 +218,13 @@ public class ActivityQuestion extends AppCompatActivity {
         endTimePicker.setHour(0);
         endTimePicker.setMinute(0);
 
-        // Reiniciar variables
         startTime = "";
         endTime = "";
         isFixedActivity = false;
     }
 
-    // Función para ir a la siguiente pantalla (todavía no creada)
     private void goToNextScreen() {
-        // Aquí puedes usar un Intent para ir a la siguiente actividad o pantalla
-        //Intent intent = new Intent(this, ResumenActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, ResumeActivity.class);
+        startActivity(intent);
     }
 }

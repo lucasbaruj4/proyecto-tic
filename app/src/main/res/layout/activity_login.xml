@@ -1,0 +1,114 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Espacio superior flexible -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Título de la pantalla de Login -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_title"
+            android:textSize="40sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Subtítulo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_subtitle"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/gray"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Campo de correo -->
+        <EditText
+            android:id="@+id/loginEmailEditText"
+            android:hint="@string/login_email_hint"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:backgroundTint="@color/cardview_shadow_end_color"
+            android:background="@color/FreeTimeGreen"
+            android:layout_marginTop="@dimen/cardview_default_elevation"
+            android:layout_marginBottom="@dimen/cardview_default_elevation"
+            android:padding="15dp" />
+
+        <!-- Campo de contraseña -->
+        <EditText
+            android:id="@+id/loginPasswordEditText"
+            android:hint="@string/login_password_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:backgroundTint="@color/cardview_shadow_end_color"
+            android:background="@color/FreeTimeGreen"
+            android:layout_marginTop="@dimen/cardview_default_elevation"
+            android:layout_marginBottom="@dimen/cardview_default_elevation"
+            android:padding="15dp"/>
+
+        <!-- Botón de Iniciar Sesión -->
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_button_text"
+            android:backgroundTint="@color/FreeTimeGreen"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:padding="16dp"
+            android:layout_marginBottom="32dp"
+            android:textSize="20sp"/>
+
+        <!-- Texto de redirección a registro -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_prompt"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/registerLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_link"
+                android:textColor="@color/FreeTimeGreen"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingStart="4dp"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <!-- Espacio inferior flexible -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</ScrollView>

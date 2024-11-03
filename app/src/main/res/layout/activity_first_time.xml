@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <!-- Título de Bienvenida -->
+    <TextView
+        android:id="@+id/tv_welcome_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_title"
+        android:textSize="24sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:paddingBottom="16dp" />
+
+    <!-- Mensaje de bienvenida -->
+    <TextView
+        android:id="@+id/tv_welcome_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_message"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:paddingBottom="24dp" />
+
+    <!-- Botón de Empezar -->
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_button"
+        android:backgroundTint="@color/FreeTimeGreen"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp"
+        android:textSize="20sp"/>
+</LinearLayout>

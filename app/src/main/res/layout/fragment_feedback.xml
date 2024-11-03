@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Título del Fragmento -->
+        <TextView
+            android:id="@+id/fragmentTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/feedback_fragment_title"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingBottom="16dp"
+            android:textAlignment="center"
+            android:layout_marginTop="15sp"/>
+
+        <!-- Calendario -->
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:layout_marginBottom="16dp"
+            android:dateTextAppearance="@style/CalendarDateText"
+            android:weekDayTextAppearance="@style/CalendarWeekText"
+            android:focusedMonthDateColor="@color/colorAccent"
+            android:unfocusedMonthDateColor="@color/light_gray"
+            android:selectedDateVerticalBar="@color/colorAccent"
+            android:showWeekNumber="false"
+            android:background="@android:color/white"/>
+
+        <!-- Sección de Actividades Planeadas y Realizadas -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activities_today"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingBottom="8dp" />
+
+        <!-- Contenedor de Actividades Planeadas y Realizadas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Columna de Actividades Planeadas -->
+            <ScrollView
+                android:id="@+id/plannedActivitiesContainer"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:id="@+id/plannedActivitiesLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Encabezado de Lo Planeado -->
+                    <TextView
+                        android:id="@+id/plannedHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/planned"
+                        android:textSize="18sp"
+                        android:textColor="@color/gray"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingBottom="8dp" />
+
+                    <!-- Aquí se agregarán dinámicamente las actividades planeadas -->
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- Columna de Actividades Realizadas -->
+            <ScrollView
+                android:id="@+id/completedActivitiesContainer"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:id="@+id/completedActivitiesLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Encabezado de Lo Realizado -->
+                    <TextView
+                        android:id="@+id/completedHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/completed"
+                        android:textSize="18sp"
+                        android:textColor="@color/gray"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingBottom="8dp" />
+
+                    <!-- Aquí se agregarán dinámicamente las actividades realizadas -->
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <!-- Espacio adicional para el botón -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <!-- Botón para Generar Feedback -->
+        <Button
+            android:id="@+id/btnGenerateFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/generate_feedback_button"
+            android:textSize="20sp"
+            android:backgroundTint="@color/FreeTimeGreen"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingVertical="12dp"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>

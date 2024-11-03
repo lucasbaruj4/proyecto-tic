@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,23 +14,59 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinalLucasEzequielIvanYLeo"
         tools:targetApi="31">
-
-        <!-- Declaración de la actividad ActivityQuestion -->
         <activity
-            android:name=".ActivityQuestion"
-            android:exported="true">
-        </activity>
+            android:name=".FinalFeedbackActivity"
+            android:exported="false" />
 
-        <!-- Declaración de la actividad RestQuestion como actividad principal -->
+        <receiver
+            android:name=".NotificationBroadcastReceiver"
+            android:exported="false" />
+
         <activity
-            android:name=".RestQuestion"
+            android:name=".AuthCheckActivity"
             android:exported="true">
             <intent-filter>
-                <!-- Definir como la actividad principal que se lanza al abrir la aplicación -->
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ActivityEndTracker"
+            android:exported="true" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="true" /> <!-- Actividad de bienvenida (pantalla principal al abrir la app) -->
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true"></activity> <!-- Actividad para el primer ingreso del usuario -->
+        <activity
+            android:name=".FirstTimeActivity"
+            android:exported="true" /> <!-- Pantalla de inicio de sesión -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" /> <!-- Pantalla de registro de usuario -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" /> <!-- Pantalla principal de la aplicación (después de iniciar sesión) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> <!-- Actividad para agregar actividades -->
+        <activity
+            android:name=".ActivityQuestion"
+            android:exported="true" /> <!-- Actividad para ver el resumen de actividades -->
+        <activity
+            android:name=".ResumeActivity"
+            android:exported="true" /> <!-- Actividad relacionada con descanso o configuraciones adicionales -->
+        <activity
+            android:name=".RestQuestion"
+            android:exported="true" />
     </application>
+
 </manifest>

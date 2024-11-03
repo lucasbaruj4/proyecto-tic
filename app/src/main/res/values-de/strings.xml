@@ -1,0 +1,249 @@
+<resources>
+
+    <string name="select_language">Sprechen</string>
+
+    <string name="apply_language">Machen</string>
+    <string-array name="language_options">
+        <item>Spanisch</item>
+        <item>Englisch</item>
+        <item>Deutsch</item>
+    </string-array>
+    <string name="language_change_message">Sprache geändert, App neu starten</string>
+
+
+    <!-- Strings para RestQuestion -->
+    <string name="shutdown_title">Wie sind Ihre Ruhezeiten?</string>
+    <string name="shutdown_subtitle">Wählen Sie die Zeiten aus, in denen Sie lieber nichts tun möchten, z. B. Zeit zur Vorbereitung auf den Schlaf:</string>
+    <string name="confirm_button">Bestätigen</string>
+
+    <!-- Strings para ActivityQuestion -->
+    <string name="activity_register_title">Aktivität registrieren</string>
+    <string name="activity_register_description">Geben Sie die Details zur Aktivität ein, wählen Sie die Tage und Uhrzeiten:</string>
+    <string name="hint_activity_name">Name der Aktivität</string>
+    <string name="start_time_label">Startzeit</string>
+    <string name="end_time_label">Endzeit</string>
+    <string name="select_days_label">Wählen Sie die Tage:</string>
+    <string name="is_fixed_label">Es ist eine feste Aktivität</string>
+    <string name="save_activity">Speichern</string>
+    <string name="title">Welche Aktivitäten gehören zu Ihrem Alltag?</string>
+    <string name="description">Diese Aktivitäten sind Teil Ihres täglichen Lebens</string>
+    <string name="days_title">An welchen Tagen haben Sie diese Aktivität?</string>
+    <string name="time_title">Zu welcher Uhrzeit?</string>
+    <string name="monday">M</string>
+    <string name="tuesday">D</string>
+    <string name="wednesday">M</string>
+    <string name="thursday">D</string>
+    <string name="friday">F</string>
+    <string name="saturday">S</string>
+    <string name="sunday">S</string>
+    <string name="A">A</string>
+    <string name="explanation_fixed">Eine feste Aktivität ist eine, die Sie in Ihrem Alltag unbedingt durchführen müssen</string>
+    <string name="confirmation_text">Möchten Sie eine weitere Aktivität speichern?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+
+    <!-- Strings para ResumeActivity -->
+    <string name="summary_title">So sieht Ihr Zeitplan aus</string>
+    <string name="summary_day_lunes">Montag</string>
+    <string name="summary_day_martes">Dienstag</string>
+    <string name="summary_day_miercoles">Mittwoch</string>
+    <string name="summary_day_jueves">Donnerstag</string>
+    <string name="summary_day_viernes">Freitag</string>
+    <string name="summary_day_sabado">Samstag</string>
+    <string name="summary_day_domingo">Sonntag</string>
+    <string name="button_previous_day_text">&lt;</string>
+    <string name="button_next_day_text">&gt;</string>
+    <string name="activities_found">Gefundene Aktivitäten für den Tag %1$s: %2$d</string>
+    <string name="no_activities_found">Keine Aktivitäten für den Tag %1$s gefunden</string>
+    <string name="activity_time_format">%1$s (%2$s - %3$s)</string>
+    <string name="start_time_out_of_range">Startzeit außerhalb des Bereichs: %1$s</string>
+    <string name="font_load_error">Fehler beim Laden der Schriftart: %1$s</string>
+    <string name="time_parse_error">Fehler beim Parsen der Zeit: %1$s</string>
+
+    <string name="morning_section">Morgen</string>
+    <string name="afternoon_section">Nachmittag</string>
+    <string name="night_section">Nacht</string>
+
+    <string name="confirm_button_summary">Bestätigen</string>
+    <string name="modify_activity_prompt">Fehlt eine Aktivität? Bearbeiten</string>
+
+    <!-- Strings para BottomNavigation -->
+    <string name="bottom_nav_home">Startseite</string>
+    <string name="bottom_nav_feedback">Feedback</string>
+    <string name="bottom_nav_profile">Profil</string>
+
+    <!-- Strings para el ProfileFragment -->
+    <string name="profile_title">Benutzerprofil</string>
+    <string name="profile_user_name">Benutzername</string>
+    <string name="profile_user_email">E-Mail-Adresse</string>
+    <string name="profile_section_settings">Einstellungen</string>
+    <string name="profile_notifications">Benachrichtigungen</string>
+    <string name="profile_section_about">Über</string>
+    <string name="profile_version">Version: 1.0.0</string>
+    <string name="profile_developer">Entwickler: Lucas Baruja, Ezequiel Arce, Leonardo Duarte und Ivan Samudio</string>
+    <string name="profile_release_date">Veröffentlichungsdatum: 2024</string>
+    <string name="profile_name">Name:</string>
+    <string name="profile_email">E-Mail:</string>
+    <string name="profile_feedback_day">Feedback-Tag:</string>
+    <string name="profile_rest_hours">Ruhezeiten:</string>
+    <string name="logout_button">Abmelden</string>
+    <string name="logout_confirmation">Möchten Sie sich wirklich abmelden?</string>
+
+    <!-- Títulos de pantalla -->
+    <string name="home_screen_title">Aktivitätskalender</string>
+
+    <!-- Strings para HomeFragment -->
+    <string name="previous_month">Vorheriger Monat</string>
+    <string name="next_month">Nächster Monat</string>
+    <string name="daily_activities">Tägliche Aktivitäten</string>
+
+    <!-- Placeholder para la lista de actividades -->
+    <string name="activity_name_placeholder">Name der Aktivität</string>
+    <string name="activity_time_placeholder">10:00 – 11:00</string>
+
+    <!-- Strings para errores o estados vacíos -->
+    <string name="no_activities_for_day">Keine Aktivitäten für diesen Tag</string>
+
+    <string name="activity_start_end_time">%1$s - %2$s</string> <!-- Formato de hora -->
+    <string name="activity_description_placeholder">Beschreibung der Aktivität</string>
+
+    <!-- Saludo para el usuario -->
+    <string name="greeting_message">Willkommen, %1$s!</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Erstes Fragment</string>
+    <string name="second_fragment_label">Zweites Fragment</string>
+    <string name="next">Weiter</string>
+    <string name="previous">Zurück</string>
+
+    <!-- Textos para la pantalla de bienvenida -->
+    <string name="app_name_for_welcome">freetime</string>
+    <string name="welcome_subtitle_1">Organisieren Sie Ihren Tag</string>
+    <string name="welcome_subtitle_2">Zeit gewinnen</string>
+    <string name="login_button_text">Anmelden</string>
+    <string name="register_prompt">Noch kein Konto?</string>
+    <string name="error_unauthenticated_user">Fehler: Benutzer nicht authentifiziert</string>
+    <!-- Texto para actividades de Login y Registro -->
+    <string name="login_activity_title">Anmelden</string>
+    <string name="register_activity_title">Registrieren</string>
+
+    <!-- Textos para la pantalla de registro -->
+    <string name="email_hint">E-Mail-Adresse</string>
+    <string name="password_hint">Passwort</string>
+    <string name="register_button">Registrieren</string>
+    <string name="login_prompt">Bereits ein Konto? <font color="#00C853">Einloggen</font></string>
+    <string name="register_title">Konto erstellen</string>
+    <string name="hint_name">Benutzername</string>
+    <string name="hint_email">E-Mail</string>
+    <string name="hint_password">Passwort</string>
+    <string name="button_register">Registrieren</string>
+    <string name="day_monday">Montag</string>
+    <string name="day_tuesday">Dienstag</string>
+    <string name="day_wednesday">Mittwoch</string>
+    <string name="day_thursday">Donnerstag</string>
+    <string name="day_friday">Freitag</string>
+    <string name="day_saturday">Samstag</string>
+    <string name="day_sunday">Sonntag</string>
+    <string name="feedback_day_prompt">Wählen Sie den Feedback-Tag</string>
+    <string name="toast_complete_fields">Bitte alle Felder ausfüllen</string>
+    <string name="toast_register_successful">Registrierung erfolgreich</string>
+    <string name="register_subtitle">Geben Sie Ihre Daten ein, um sich zu registrieren</string>
+
+    <!-- Login Page Strings -->
+    <string name="login_title">Anmelden</string>
+    <string name="login_subtitle">Geben Sie Ihre Daten ein, um sich anzumelden</string>
+    <string name="login_email_hint">E-Mail-Adresse</string>
+    <string name="login_password_hint">Passwort</string>
+    <string name="register_link">Registrieren</string>
+    <string name="error_empty_fields">Bitte alle erforderlichen Daten eingeben</string>
+    <string name="error_invalid_credentials">Falsche E-Mail oder Passwort</string>
+
+    <!-- First Time Page Strings -->
+    <string name="welcome_title">Willkommen bei <font color="@color/FreeTimeGreen">freetime</font></string>
+    <string name="welcome_message">Um Zeit zu gewinnen, füllen Sie bitte ein Formular mit wichtigen Informationen aus, um Ihre Tage zu organisieren.</string>
+    <string name="start_button">Starten</string>
+
+    <!-- Notification strings -->
+    <string name="notification_channel_id">aktivitäten_benachrichtigungen</string>
+    <string name="notification_channel_name">Aktivitätsbenachrichtigungen</string>
+    <string name="notification_title">Hast du schon mit %1$s begonnen?</string>
+    <string name="notification_content">Klicken Sie hier, um Ihren Fortschritt zu aktualisieren</string>
+    <string name="notification_channel_description">Benachrichtigungen für geplante Aktivitätserinnerungen.</string>
+
+    <!-- WorkManager strings -->
+    <string name="work_request_tag">aktivitäten_erinnerung</string>
+
+    <!-- Feedback Activity strings -->
+    <string name="feedback_activity_title">Aktivitätsfortschritt</string>
+    <string name="feedback_activity_description">Markieren Sie, ob Sie die Aktivität gestartet haben oder ob Sie sie heute nicht durchführen werden.</string>
+    <string name="default_feedback_prompt">Fehler 404</string>
+    <string name="mark_started">Als begonnen markieren</string>
+    <string name="mark_skipped">Als übersprungen markieren</string>
+    <string name="record_completion_time">Endzeit registrieren</string>
+    <string name="task_completed_on_time">Aktivität pünktlich abgeschlossen!</string>
+    <string name="task_not_completed">Aktivität nicht abgeschlossen.</string>
+
+    <string name="app_name_help">möchte Ihnen helfen, <b>Zeit</b> zu gewinnen</string>
+    <string name="feedback_activity_prompt">Haben Sie die Aktivität "%1$s" schon begonnen?</string>
+    <string name="feedback_activity_hint">Beantworten Sie diese <b>Schlüssel</b>-Frage, wenn Sie mit Ihrer Aktivität beginnen!</string>
+    <string name="feedback_start_button">Ja, ich habe bereits begonnen</string>
+    <string name="feedback_skip_button">Ich werde die Aktivität nicht durchführen</string>
+    <string name="activity_started_message">Aktivität gestartet. Kehren Sie hierher zurück, wenn Sie fertig sind.</string>
+    <string name="activity_skipped_message">Aktivität als nicht durchgeführt markiert.</string>
+
+    <!-- Lorem Ipsum -->
+    <string name="lorem_ipsum">Starten</string>
+
+    <!-- Strings para Activity End Tracker -->
+    <string name="end_feedback_title">Vielen Dank, dass Sie Ihre Zeiten eingetragen haben!</string>
+    <string name="end_feedback_description">Mit Ihren Antworten erleichtern Sie freetime die Erstellung von wöchentlichem Feedback für Sie!</string>
+    <string name="end_feedback_activity_prompt">Kehren Sie zurück, wenn Sie die Aktivität "%1$s" beendet haben!</string>
+    <string name="button_end_activity">Ich habe die Aktivität beendet</string>
+    <string name="button_view_calendar">Meinen Kalender anzeigen</string>
+
+    <!-- Content Description Para El Boton -->
+    <string name="add_activity">Button zum Hinzufügen zusätzlicher Aktivitäten</string>
+
+    <!-- Strings para FinalFeedbackActivity -->
+    <string name="alignment_percentage">%1$d%% ausgerichtet</string>
+    <string name="alignment_rating">Bewertung: %1$s</string>
+    <string name="needs_improvement_rating">Verbesserungsbedarf</string>
+    <string name="alignment_rating_placeholder">Bewertung</string>
+
+    <!-- Strings para FeedbackFragment -->
+    <string name="generate_feedback">Feedback generieren</string>
+
+    <string name="feedback_fragment_title">Wöchentliches Feedback</string>
+    <string name="activities_today">Aktivitäten heute</string>
+    <string name="planned">Geplant</string>
+    <string name="completed">Durchgeführt</string>
+    <string name="generate_feedback_button">Feedback generieren</string>
+
+    <!-- Strings para Final Feedback Activity -->
+    <string name="congratulations_message">Herzlichen Glückwunsch zu Ihrem Fortschritt!</string>
+    <string name="alignment_percentage_placeholder">%d%%</string>
+    <string name="excellent_rating">Hervorragende Ausrichtung!</string>
+    <string name="medium_rating">Moderate Ausrichtung</string>
+    <string name="poor_rating">Niedrige Ausrichtung, weiter so!</string>
+    <string name="deviation_details_title">Abweichungsdetails:</string>
+    <string name="activity_name">Aktivität: %s</string>
+    <string name="not_completed">Nicht durchgeführt</string>
+    <string name="perfect">Perfekt!</string>
+    <string name="small_deviation">Abweichung von %d Minuten</string>
+    <string name="high_deviation">Hohe Abweichung von %d Minuten</string>
+
+    <string name="activity_status_finished">ABGESCHLOSSEN</string>
+    <string name="btn_end_activity">Aktivität beenden</string>
+    <string name="btn_view_calendar">Kalender anzeigen</string>
+
+    <string name="error_user_not_authenticated">Fehler: Benutzer nicht authentifiziert</string>
+    <string name="select_at_least_one_day">Wählen Sie mindestens einen Tag aus</string>
+    <string name="default_start_time">08:00</string>
+    <string name="default_end_time">17:00</string>
+    <string name="activity_saved_log">Aktivität gespeichert: %1$s am Datum: %2$s an Tagen %3$s</string>
+
+    <!-- New strings for status -->
+    <string name="status_started">GESTARTET</string>
+    <string name="status_skipped">NICHT_DURCHGEFÜHRT</string>
+    <string name="navigate_to_home_fragment">HomeFragment</string>
+
+</resources>

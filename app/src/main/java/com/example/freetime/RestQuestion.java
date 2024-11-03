@@ -1,31 +1,32 @@
-/*
- *
- * Project: FreeTime
- * Author: Lucas Baruja
- * Date: 10/23/2024
- * Description: Esta clase maneja la selección del periodo de tiempo donde el usuario "se apaga" o deja de realizar actividades.
- *
- * Use: Se utiliza para obtener el horario en el que el usuario prefiere no realizar ninguna actividad. Estos datos se almacenarán para luego ser usados por el algoritmo de FreeTime.
- *
- */
-
 package com.example.freetime;
 
-import android.content.Intent;  // Importar para manejar la navegación
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.freetime.entities.User;
+
+import java.util.concurrent.Executors;
 
 public class RestQuestion extends AppCompatActivity {
 
+    private static final String TAG = "RestQuestion";
     private TimePicker timePickerStart, timePickerEnd;
+    private AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rest_question);
+
+        // Inicializar la base de datos
+        db = AppDatabase.getDatabase(this);
 
         // Inicializar los TimePickers y el botón
         timePickerStart = findViewById(R.id.timePicker_start);
@@ -44,11 +45,9 @@ public class RestQuestion extends AppCompatActivity {
             int endHour = timePickerEnd.getHour();
             int endMinute = timePickerEnd.getMinute();
 
-            // Mostrar las horas seleccionadas con un mensaje (puedes quitar esto más adelante)
-            String message = "Horario de apagado: " + startHour + ":" + startMinute + " - " + endHour + ":" + endMinute;
-            Toast.makeText(RestQuestion.this, message, Toast.LENGTH_SHORT).show();
 
-            // Guardar estos valores en una base de datos o en SharedPreferences (por hacer)
+
+            // Guardar estos valores en la base de datos para el usuario autenticado
             saveShutdownTime(startHour, startMinute, endHour, endMinute);
 
             // Navegar a la pantalla de ActivityQuestion
@@ -56,21 +55,43 @@ public class RestQuestion extends AppCompatActivity {
         });
     }
 
-    // Método para guardar los horarios seleccionados
+    // Método para guardar los horarios seleccionados en el usuario autenticado en la base de datos
+    // saveShutdownTime en RestQuestion
     private void saveShutdownTime(int startHour, int startMinute, int endHour, int endMinute) {
-        // Guardar los datos en SharedPreferences (o base de datos)
-        getSharedPreferences("FreeTimePrefs", MODE_PRIVATE)
-                .edit()
-                .putInt("startHour", startHour)
-                .putInt("startMinute", startMinute)
-                .putInt("endHour", endHour)
-                .putInt("endMinute", endMinute)
-                .apply();
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("user_id", -1);
+
+        if (userId == -1) {
+            Toast.makeText(this, "Error: Usuario no autenticado", Toast.LENGTH_SHORT).show();
+            return;
+        } else {
+            Log.d(TAG, "Usuario autenticado con user_id: " + userId); // Log para verificar el user_id
+        }
+
+        // Ejecuta la actualización en un hilo separado
+        Executors.newSingleThreadExecutor().execute(() -> {
+            User user = db.userDao().getUserById(userId);
+            if (user != null) {
+                user.startHour = startHour;
+                user.startMinute = startMinute;
+                user.endHour = endHour;
+                user.endMinute = endMinute;
+
+                db.userDao().updateUser(user);  // Usa updateUser para actualizar el usuario existente
+                Log.d(TAG, "Horarios de apagado actualizados en la base de datos para user_id: " + userId);
+
+                // Solo navega a la siguiente actividad después de que se actualicen los datos
+                runOnUiThread(this::goToActivityQuestion);
+            } else {
+                Log.e(TAG, "Error: Usuario no encontrado en la base de datos con user_id: " + userId);
+                runOnUiThread(() -> Toast.makeText(this, "Error: Usuario no encontrado", Toast.LENGTH_SHORT).show());
+            }
+        });
     }
+
 
     // Método para navegar a la pantalla de ActivityQuestion
     private void goToActivityQuestion() {
-        // Crear un Intent para navegar a ActivityQuestion
         Intent intent = new Intent(RestQuestion.this, ActivityQuestion.class);
         startActivity(intent);  // Iniciar la actividad
     }

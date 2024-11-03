@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <!-- Título de la aplicación "freetime quiere ayudarte a ganar tiempo" en una sola línea -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="15dp">
+
+        <!-- Parte "free" en Poppins Bold -->
+        <TextView
+            android:id="@+id/titleTextViewFree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/free"
+            android:textSize="26sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/FreeTimeGreen"
+            android:layout_marginBottom="18dp"
+            android:paddingStart="10dp"/>
+
+        <!-- Parte "time" en Poppins Light -->
+        <TextView
+            android:id="@+id/titleTextViewTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time"
+            android:textSize="26sp"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/FreeTimeGreen"
+            android:layout_marginBottom="18dp"/>
+
+        <!-- Texto adicional en Poppins Regular para "quiere ayudarte a ganar tiempo" -->
+        <TextView
+            android:id="@+id/titleSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name_help"
+            android:textSize="26sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/FreeTimeGreen"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Subtítulo con el nombre de la actividad -->
+    <TextView
+        android:id="@+id/activityPromptTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback_activity_prompt"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:paddingBottom="10dp" />
+
+    <!-- Descripción de la pregunta -->
+    <TextView
+        android:id="@+id/questionHintTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:paddingBottom="40dp"
+        android:text="@string/feedback_activity_hint"
+        android:textColor="@color/gray"
+        android:textSize="18sp" />
+
+    <!-- Botón para confirmar inicio de actividad -->
+    <Button
+        android:id="@+id/btn_start_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback_start_button"
+        android:backgroundTint="@color/FreeTimeGreen"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp"/>
+
+    <!-- Botón para indicar que no realizará la actividad -->
+    <Button
+        android:id="@+id/btn_skip_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback_skip_button"
+        android:backgroundTint="@color/FreeTimeGreen"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp"
+        android:textSize="16sp"/>
+</LinearLayout>

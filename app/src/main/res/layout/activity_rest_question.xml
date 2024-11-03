@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:text="@string/shutdown_subtitle"
         android:layout_marginTop="16dp"
+        android:textSize="18sp"
         android:fontFamily="@font/poppins"
         android:textStyle="normal"/>
 
@@ -56,11 +57,12 @@
     <!-- Botón para confirmar las horas seleccionadas -->
     <Button
         android:id="@+id/btn_confirm"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/confirm_button"
         android:fontFamily="@font/poppins"
         android:textStyle="bold"
+        android:textSize="20sp"
         android:layout_marginTop="32dp"/>
 </LinearLayout>
 

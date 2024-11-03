@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <!-- Espacio superior flexible -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Logo del título dividido en dos TextViews -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Parte "free" en Poppins Bold -->
+        <TextView
+            android:id="@+id/appTitleFree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="free"
+            android:textSize="80sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/FreeTimeGreen" />
+
+        <!-- Parte "time" en Poppins Light -->
+        <TextView
+            android:id="@+id/appTitleTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="time"
+            android:textSize="80sp"
+            android:fontFamily="@font/poppins_extralight"
+            android:textColor="@color/FreeTimeGreen" />
+    </LinearLayout>
+
+    <!-- Subtítulo de bienvenida -->
+    <TextView
+        android:id="@+id/welcomeSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_subtitle_1"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/welcomeSubtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_subtitle_2"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:paddingBottom="24dp" />
+
+    <!-- Espacio entre subtítulos y botón de inicio de sesión -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Botón de iniciar sesión -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_button_text"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/FreeTimeGreen"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp"
+        android:textSize="20sp" />
+
+    <!-- Espacio entre botón de inicio de sesión y texto de registro -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp" />
+
+    <!-- Texto de redirección a registro -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_prompt"
+            android:textColor="@color/gray"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_link"
+            android:textColor="@color/FreeTimeGreen"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingStart="4dp"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <!-- Espacio inferior flexible -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

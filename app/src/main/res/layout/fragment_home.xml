@@ -1,0 +1,103 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- ScrollView con el contenido principal -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:paddingBottom="56dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Saludo al usuario -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/greeting_message"
+                android:id="@+id/greetingTextView"
+                android:textSize="24sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="15sp"/>
+
+            <!-- CalendarView estilizado -->
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:dateTextAppearance="@style/CalendarDateText"
+                android:weekDayTextAppearance="@style/CalendarWeekText"
+                android:focusedMonthDateColor="@color/colorAccent"
+                android:unfocusedMonthDateColor="@color/light_gray"
+                android:selectedDateVerticalBar="@color/colorAccent"
+                android:showWeekNumber="false"
+                android:background="@android:color/white"/>
+
+            <!-- Sección de Mañana -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/morning_section"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_green_dark"
+                android:paddingBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMorningActivities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:scrollbars="vertical" />
+
+            <!-- Sección de Tarde -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/afternoon_section"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_dark"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAfternoonActivities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:scrollbars="vertical" />
+
+            <!-- Sección de Noche -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/night_section"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_blue_dark"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewNightActivities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
