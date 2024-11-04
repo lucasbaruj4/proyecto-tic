@@ -1,3 +1,12 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Esta clase es un adaptador que gestiona la visualización de actividades en una lista. Enlaza los datos de cada actividad con su vista correspondiente.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Se usa en conjunto con un RecyclerView para mostrar actividades en una lista.
+ */
+
+
 package com.example.freetime;
 
 import android.view.LayoutInflater;

@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Fragmento que presenta un formulario de comentarios para los usuarios.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Incluido en actividades que recogen feedback de usuario.
+ */
+
 package com.example.freetime;
 
 import android.content.Intent;

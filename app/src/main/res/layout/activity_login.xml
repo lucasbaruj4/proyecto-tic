@@ -1,3 +1,12 @@
+<!--
+ Nombre del proyecto: FreeTime
+ Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ Descripción: Layout para la pantalla de inicio de sesión de usuarios.
+ Fecha de creación: 04/11/2024
+ Forma de utilizar: Proporciona los campos de entrada para que los usuarios inicien sesión.
+-->
+
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

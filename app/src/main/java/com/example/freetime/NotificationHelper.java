@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Clase auxiliar para configurar y enviar notificaciones a los usuarios.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Utilizado para gestionar la creación y envío de notificaciones.
+ */
+
 package com.example.freetime;
 
 import android.Manifest;

@@ -1,3 +1,12 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Pantalla de inicio de sesión para que los usuarios accedan a su cuenta.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Pantalla inicial para autenticación de usuario.
+ */
+
+
 package com.example.freetime;
 
 import android.content.Intent;

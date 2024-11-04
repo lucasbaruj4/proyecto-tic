@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Interfaz DAO para gestionar las operaciones de base de datos relacionadas con la entidad User. Proporciona métodos para insertar, actualizar, eliminar y consultar datos de usuario.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Utilizado para realizar operaciones CRUD en la entidad User en la base de datos.
+ */
+
 package com.example.freetime.dao;
 
 import androidx.room.Dao;

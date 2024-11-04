@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Interfaz DAO para las operaciones de base de datos relacionadas con la entidad UserProgress. Incluye métodos para manejar el progreso de usuario en diversas actividades.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Usado para ejecutar operaciones CRUD en la entidad UserProgress en la base de datos.
+ */
+
 package com.example.freetime.dao;
 
 import androidx.room.Dao;

@@ -1,3 +1,12 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Clase encargada de rastrear y registrar el final de cada actividad, posiblemente para estadísticas o historial de usuario.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Llamada al final de una actividad para guardar información relacionada.
+ */
+
+
 package com.example.freetime;
 
 import android.content.Intent;

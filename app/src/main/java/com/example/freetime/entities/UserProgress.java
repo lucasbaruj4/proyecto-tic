@@ -1,3 +1,12 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Entidad que rastrea el progreso de un usuario en las actividades. Guarda información sobre las actividades completadas, el tiempo dedicado, y otros indicadores de progreso.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Almacenada en la base de datos para analizar y mostrar el progreso de cada usuario en sus actividades.
+ */
+
+
 package com.example.freetime.entities;
 
 import androidx.room.Entity;

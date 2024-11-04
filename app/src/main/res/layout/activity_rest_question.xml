@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    *
-    * Project: FreeTime
-    * Author: Lucas Baruja
-    * Date: 10/23/2024
-    * Description: Este XML contiene el layout para la actividad de RestQuestion
-    -->
-<!-- Layout principal para la pregunta del sueño -->
-<!-- activity_shutdown.xml -->
+ Nombre del proyecto: FreeTime
+ Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ Descripción: Layout para preguntas relacionadas con el descanso del usuario.
+ Fecha de creación: 04/11/2024
+ Forma de utilizar: Muestra las preguntas sobre descanso que el usuario debe responder.
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

@@ -1,3 +1,12 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Entidad que representa a un usuario en la aplicación. Contiene información relevante del usuario como nombre, correo electrónico, y otros detalles necesarios para la autenticación y perfil.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Almacenada en la base de datos para identificar y autenticar a los usuarios de la aplicación.
+ */
+
+
 package com.example.freetime.entities;
 
 import androidx.room.ColumnInfo;

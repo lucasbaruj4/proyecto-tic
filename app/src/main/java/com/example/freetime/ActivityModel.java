@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Modelo de datos para representar una actividad. Contiene propiedades y métodos relacionados con una actividad específica.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Utilizado para almacenar y manipular datos de actividades en la aplicación.
+ */
+
 package com.example.freetime;
 
 import java.util.List;

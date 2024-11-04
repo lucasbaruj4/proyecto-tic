@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+ Nombre del proyecto: FreeTime
+ Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ Descripción: Define la paleta de colores utilizada en la aplicación. Cada color está etiquetado para ser utilizado en distintos componentes de la interfaz.
+ Fecha de creación: 04/11/2024
+ Forma de utilizar: Referenciado en el diseño de actividades, fragmentos y estilos para mantener consistencia visual.
+-->
+
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Pantalla de bienvenida que aparece la primera vez que se abre la aplicación.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Solo se muestra al iniciar la app por primera vez.
+ */
+
 package com.example.freetime;
 
 import android.content.Intent;

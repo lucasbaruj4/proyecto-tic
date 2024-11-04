@@ -1,8 +1,48 @@
+<!--
+ Nombre del proyecto: FreeTime
+ Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ Descripción: Variación del archivo de temas para dispositivos con Android API nivel 23 o superior, adaptando configuraciones específicas.
+ Fecha de creación: 04/11/2024
+ Forma de utilizar: Se utiliza automáticamente en dispositivos con API 23+, optimizando estilos según la versión.
+-->
+
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <style name="Theme.ProyectoFinalLucasEzequielIvanYLeo" parent="Base.Theme.ProyectoFinalLucasEzequielIvanYLeo">
-    <!-- Transparent system bars for edge-to-edge. -->
-    <item name="android:navigationBarColor">@android:color/transparent</item>
-    <item name="android:statusBarColor">@android:color/transparent</item>
-    <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+  <!-- Base application theme -->
+  <style name="Base.Theme.ProyectoFinalLucasEzequielIvanYLeo" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Customize your light theme here -->
+    <item name="colorPrimary">@color/FreeTimeGreen</item>
+    <item name="android:datePickerStyle">@style/CalendarViewCustomStyle</item>
+  </style>
+
+  <!-- Application theme -->
+  <style name="Theme.ProyectoFinalLucasEzequielIvanYLeo" parent="Base.Theme.ProyectoFinalLucasEzequielIvanYLeo" />
+
+  <!-- Estilo personalizado para CalendarView -->
+  <style name="CalendarViewCustomStyle">
+    <item name="android:dateTextAppearance">@style/CalendarDateText</item>
+    <item name="android:weekDayTextAppearance">@style/CalendarWeekText</item>
+    <item name="android:focusedMonthDateColor">@color/colorAccent
+    </item> <!-- Color para el círculo de la fecha seleccionada -->
+    <item name="android:unfocusedMonthDateColor">@color/light_gray
+    </item> <!-- Color para las fechas no seleccionadas -->
+    <item name="android:selectedDateVerticalBar">@color/colorAccent</item>
+  </style>
+
+  <!-- Estilo para las fechas del calendario -->
+  <style name="CalendarDateText" parent="TextAppearance.AppCompat">
+    <item name="android:textSize">16sp</item> <!-- Tamaño de texto más grande -->
+    <item name="android:fontFamily">@font/poppins_regular</item> <!-- Fuente Poppins -->
+    <item name="android:textColor">@color/black</item> <!-- Color del texto -->
+  </style>
+
+  <!-- Estilo para los días de la semana en el calendario -->
+  <style name="CalendarWeekText" parent="TextAppearance.AppCompat">
+    <item name="android:textSize">14sp
+    </item> <!-- Tamaño de texto más grande para los días de la semana -->
+    <item name="android:fontFamily">@font/poppins_bold</item> <!-- Fuente Poppins en negrita -->
+    <item name="android:textColor">@color/gray</item> <!-- Color del texto -->
+  </style>
+  <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@android:color/white</item>
   </style>
 </resources>

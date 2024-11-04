@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+ Nombre del proyecto: FreeTime
+ Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ Descripción: Layout para la actividad de retroalimentación donde el usuario puede dejar comentarios.
+ Fecha de creación: 04/11/2024
+ Forma de utilizar: Proporciona el formulario para que los usuarios envíen su feedback.
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

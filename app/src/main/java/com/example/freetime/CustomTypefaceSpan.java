@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Define un tipo de letra personalizado para aplicar estilos específicos en textos.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Aplicado a elementos de texto para estilos personalizados.
+ */
+
 package com.example.freetime;
 
 import android.graphics.Paint;

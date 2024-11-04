@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Permite a los usuarios retomar una actividad pausada.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Llamado para reanudar una actividad previamente pausada.
+ */
+
 package com.example.freetime;
 
 import android.content.Intent;

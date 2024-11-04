@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Clase que maneja recordatorios para actividades, utilizando un Worker para ejecutar recordatorios en segundo plano.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Configurado para enviar recordatorios a los usuarios de forma periódica o programada.
+ */
+
 package com.example.freetime;
 
 import android.app.AlarmManager;

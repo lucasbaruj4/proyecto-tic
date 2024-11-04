@@ -1,3 +1,12 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Fragmento que muestra el perfil del usuario y permite editar información.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Accesible desde el menú principal para ver o editar el perfil.
+ */
+
+
 package com.example.freetime;
 
 import android.content.DialogInterface;

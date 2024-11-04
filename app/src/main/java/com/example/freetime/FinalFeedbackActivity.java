@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Pantalla final de comentarios que recopila opiniones del usuario antes de cerrar sesión.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Mostrada al finalizar el uso de la app.
+ */
+
 package com.example.freetime;
 
 import android.os.Bundle;

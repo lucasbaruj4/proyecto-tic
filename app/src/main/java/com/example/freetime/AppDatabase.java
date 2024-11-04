@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Configura y maneja la base de datos de la aplicación, incluyendo la inicialización y las interacciones con la base de datos.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Centraliza el acceso a la base de datos, creando instancias de DAOs para consultas.
+ */
+
 package com.example.freetime;
 
 import android.content.Context;

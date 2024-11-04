@@ -1,3 +1,11 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Fragmento secundario de navegación que muestra información adicional.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Incluido en la navegación de la app.
+ */
+
 package com.example.freetime;
 
 import android.os.Bundle;

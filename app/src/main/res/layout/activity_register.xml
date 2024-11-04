@@ -1,3 +1,12 @@
+<!--
+ Nombre del proyecto: FreeTime
+ Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ Descripción: Layout para la pantalla de registro de nuevos usuarios.
+ Fecha de creación: 04/11/2024
+ Forma de utilizar: Proporciona el formulario de registro para nuevos usuarios.
+-->
+
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

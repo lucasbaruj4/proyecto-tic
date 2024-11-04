@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Archivo de configuración para la fuente tipográfica Poppins utilizada en la aplicación. Define los estilos y variantes de la fuente (como peso y tamaño) para una experiencia visual consistente.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Referenciado en el archivo de temas y en estilos específicos para aplicar la fuente Poppins en los textos de la aplicación.
+-->
+
 <font-family xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Poppins Regular -->

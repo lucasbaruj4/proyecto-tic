@@ -1,3 +1,12 @@
+/*
+ * Nombre del proyecto: FreeTime
+ * Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ * Descripción: Entidad que representa una actividad en la aplicación. Almacena datos como el nombre, descripción y otros atributos relevantes de la actividad.
+ * Fecha de creación: 04/11/2024
+ * Forma de utilizar: Utilizada para almacenar y gestionar la información de cada actividad en la base de datos.
+ */
+
+
 package com.example.freetime.entities;
 
 import androidx.room.Entity;

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    *
-    * Project: FreeTime
-    * Author: Lucas Baruja
-    * Date: 10/23/2024
-    * Description: Este XML contiene el layout para la actividad de ActivityQuestion
-    -->
+ Nombre del proyecto: FreeTime
+ Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ Descripción: Layout para la actividad de preguntas asociadas a una actividad en la aplicación.
+ Fecha de creación: 04/11/2024
+ Forma de utilizar: Define la estructura visual para que el usuario responda preguntas relacionadas con la actividad.
+-->
+
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

@@ -1,3 +1,11 @@
+<!--
+ Nombre del proyecto: FreeTime
+ Autores: Lucas Baruja, Leonardo Duarte, Ezequiel Arce, Iván Samudio
+ Descripción: Contiene todos los textos estáticos de la aplicación en el idioma principal. Facilita la traducción y el mantenimiento del contenido textual.
+ Fecha de creación: 04/11/2024
+ Forma de utilizar: Referenciado en las actividades, fragmentos y elementos de UI para manejar textos.
+-->
+
 <resources>
     <string name="app_name" translatable="false">FreeTime</string>
     <string name="free" translatable="false">free</string>
@@ -220,7 +228,6 @@
     <string name="generate_feedback">Generar Feedback</string>
 
 
-
     <string name="feedback_fragment_title">Feedback Semanal</string>
     <string name="activities_today">Actividades de Hoy</string>
     <string name="planned">Lo Planeado</string>
@@ -246,7 +253,6 @@
     <string name="btn_view_calendar">Ver Calendario</string>
 
 
-
     <string name="error_user_not_authenticated">Error: Usuario no autenticado</string>
     <string name="select_at_least_one_day">Seleccione al menos un día</string>
     <string name="default_start_time">08:00</string>
@@ -258,5 +264,6 @@
     <string name="status_started">INICIADA</string>
     <string name="status_skipped">NO_REALIZADA</string>
     <string name="navigate_to_home_fragment">HomeFragment</string>
+    <string name="slogan">Organizá tu día\nGaná tiempo</string>
 
 </resources>
